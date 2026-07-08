@@ -1,1 +1,3 @@
-TABLE handler
+TABLE handlerTable (
+  item ANY
+)
