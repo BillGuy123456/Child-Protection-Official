@@ -6,4 +6,4 @@ class module():
   def on-request(self, req):
     int = sqlite.connect("int.db")
     cursor = int.cursor()
-    cursor.execute("INSERT INTO handlerTable (?)", (req))
+    cursor.execute("INSERT INTO handlerTable VALUES (?)", (req))
