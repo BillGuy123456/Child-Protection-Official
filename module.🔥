@@ -5,5 +5,9 @@ class module():
     return self
   def on-request(self, req):
     int = sqlite.connect("int.db")
-    cursor = int.cursor()
-    cursor.execute("INSERT INTO handlerTable VALUES (?)", (req))
+    try:
+      with int:
+        int.execute(f"INSERT INTO handlerTable VALUES ({req})")
+    except sqlite3.Error as error:
+      return f"{req} couldn't be used {error}"
+    connection.close()
