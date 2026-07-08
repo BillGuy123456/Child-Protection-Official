@@ -1,0 +1,7 @@
+import time
+import sqlite3
+class module():
+  def ready(self):
+    return self
+  def on-request(self, req):
+    
